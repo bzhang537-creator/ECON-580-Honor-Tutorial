@@ -1,0 +1,66 @@
+# Simplified Replication
+
+This repository contains the Stata code and final dataset for a simplified country-level replication of the paper "Svaleryd, Helena and Jonas Vlachos. “Financial markets, the pa4ern of industrial specializabon
+and comparabve advantage: Evidence from OECD countries.” European Economic Review, 49
+(2005): 113-144.
+
+I also did the replication of Wu, Alice. “Gendered Language on the Economics Job Market Rumors Forum.” AEA Papers and
+Proceedings 108 (2018): 175-179.
+So if the FinMarket one doesn't work, please check out the alternative replication work so that I can guarantee that I have finished the assignment.
+
+## Overview
+
+The original paper examines how financial development affects industry specialization across countries, using industry-level external finance dependence (FININT from Rajan & Zingales, 1998) interacted with country-level financial indicators. Due to data limitations (mismatched industry codes in available OECD files), this replication uses **country-level aggregation** and focuses on the Balassa index as the dependent variable (larger sample than ln(r)).
+
+Key findings:
+- FININT × Ln(MCAP) is positive and marginally significant (coefficient 6.870–7.171, p ≈ 0.075–0.080).
+- Results partially support the original hypothesis that financial development promotes comparative advantage in financially dependent sectors.
+
+## Files
+
+- `replication_summary.do` — Main Stata script: loads final data, runs regressions, outputs Table 1
+- `FINAL_replication_dataset.dta` — Final merged dataset (17 OECD countries) with:
+  - Dependent variables: ln_r, balassa
+  - Financial indicators: ln_mcap, ln_strade, ln_dc, ln_lly
+  - FININT interactions: finint_mcap, finint_strade, finint_dc, finint_lly
+  - Controls: ln_secsch, ln_kapw1, ln_agriw, ln_rwoodew, minority, creditor, acstan
+- `table1_final.csv` — Regression results table (baseline + extension with controls)
+- `final_log.txt` — Log file with full command history and outputs (optional)
+
+## How to Replicate
+
+1. Install required package (run once):
+
+2. Update file paths in `replication_summary.do` to your local directory.
+
+3. Open Stata and run: do replication_summary.do
+
+4. Output: `table1_final.csv` (regression table) will be generated in the specified folder.
+
+## Key Results Summary
+
+| Variable              | Coefficient | Std. Err. | t-stat | p-value | Notes |
+|-----------------------|-------------|-----------|--------|---------|-------|
+| FININT × Ln(MCAP)     | 7.171*      | 3.701     | 1.94   | 0.075   | Positive, significant at 10% |
+| FININT × Ln(STRADE)   | 0.949       | 1.050     | 0.90   | 0.381   | Positive, not significant |
+| FININT × Ln(DC)       | -0.537      | 0.308     | -1.74  | 0.107   | Negative, not significant |
+| FININT × Ln(LLY)      | 1.241*      | 0.630     | ~1.97  | ~0.10   | Positive, marginally significant |
+
+* p < 0.10  
+Dependent variable: Balassa index (N=14–17). OLS. FININT = 0.3 (average from Rajan & Zingales 1998). Small sample due to data cleaning and aggregation.
+
+## Limitations
+
+- Country-level aggregation (no industry dimension due to data mismatch).
+- Small sample size (N=14–17 for Balassa regressions).
+- Omitted original industry-intensity interactions (e.g., LabcomUS × Ln(SECSCH)) due to missing industry-level data.
+
+## References
+
+- Rajan, R. G., & Zingales, L. (1998). Financial dependence and growth. *American Economic Review*.
+- Sauder, H., & Vlachos, J. (2005). Financial development and industry specialization. *European Economic Review*.
+- World Bank. (2022). Global Financial Development Database.
+- La Porta et al. (1998), Barro & Lee (2000), Penn World Table (for controls).
+
+Author: Yiqing  
+Contact: [your email if needed]
