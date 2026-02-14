@@ -1,20 +1,10 @@
 # Simplified Replication
 
-This repository contains the Stata code and final dataset for a simplified country-level replication of the paper "Svaleryd, Helena and Jonas Vlachos. “Financial markets, the pa4ern of industrial specializabon
-and comparabve advantage: Evidence from OECD countries.” European Economic Review, 49
-(2005): 113-144.
+This repository contains the Stata code and final dataset for a simplified country-level replication of the paper "Helena Svaleryd and Jonas Vlachos. “Financial markets, the pattern of industrial specializabon
+and comparabve advantage: Evidence from OECD countries.” European Economic Review, 49(2005): 113-144.
 
-I also did the replication of Wu, Alice. “Gendered Language on the Economics Job Market Rumors Forum.” AEA Papers and
-Proceedings 108 (2018): 175-179.
-So if the FinMarket one doesn't work, please check out the alternative replication work so that I can guarantee that I have finished the assignment.
-
-## Overview
-
-The original paper examines how financial development affects industry specialization across countries, using industry-level external finance dependence (FININT from Rajan & Zingales, 1998) interacted with country-level financial indicators. Due to data limitations (mismatched industry codes in available OECD files), this replication uses **country-level aggregation** and focuses on the Balassa index as the dependent variable (larger sample than ln(r)).
-
-Key findings:
-- FININT × Ln(MCAP) is positive and marginally significant (coefficient 6.870–7.171, p ≈ 0.075–0.080).
-- Results partially support the original hypothesis that financial development promotes comparative advantage in financially dependent sectors.
+I also did the replication of Wu, Alice. “Gendered Language on the Economics Job Market Rumors Forum.” AEA Papers and Proceedings 108 (2018): 175-179.
+So if the FinMarket one doesn't work, please check out the alternative replication work in the other branch so that I can guarantee that I have finished the assignment.
 
 ## Files
 
@@ -48,7 +38,7 @@ Key findings:
 
 * p < 0.10  
 Dependent variable: Balassa index (N=14–17). OLS. FININT = 0.3 (average from Rajan & Zingales 1998). Small sample due to data cleaning and aggregation.
-
+The final table may differ, but signs are the same.
 ## Limitations
 
 - Country-level aggregation (no industry dimension due to data mismatch).
@@ -62,5 +52,4 @@ Dependent variable: Balassa index (N=14–17). OLS. FININT = 0.3 (average from R
 - World Bank. (2022). Global Financial Development Database.
 - La Porta et al. (1998), Barro & Lee (2000), Penn World Table (for controls).
 
-Author: Yiqing  
-Contact: [your email if needed]
+Author: Yiqing Zhang
