@@ -21,7 +21,7 @@ So if the FinMarket one doesn't work, please check out the alternative replicati
 
 1. Install required package (run once):
 
-2. Update file paths in `replication_summary.do` to your local directory.
+2. Update file paths in replication_summary.do to your local directory.
 
 3. Open Stata and run: do replication_summary.do
 
